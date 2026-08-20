@@ -122,12 +122,14 @@ html { scroll-behavior: smooth; }
 .btn-star--sm { padding: 10px 18px; font-size: 12.5px; }
 
 /* ---------- 5. Шапка ---------- */
-.land-header { background: #fff; border-bottom: 1px solid var(--line); padding: 14px 0; position: sticky; top: 0; z-index: 1030; }
+.land-header { background: var(--navy); border-bottom: 1px solid var(--line); padding: 14px 0; position: sticky; top: 0; z-index: 1030; }
 .brand { display: inline-flex; align-items: center; gap: 12px; }
 .brand__stars { width: 74px; height: auto; color: var(--gold); }
-.brand__name { font: 800 18px/1.05 var(--font-display); color: var(--navy); }
+.brand_img {max-height: 5rem;}
+.brand__name { font: 800 18px/1.05 var(--font-display); color: var(--gold); }
 .brand__name small { font: 500 10.5px/1.4 var(--font-body); color: var(--muted); letter-spacing: .08em; display: block; }
-.land-phone { font: 600 14px/1 var(--font-display); color: var(--ink); }
+.land-phone { font: 600 14px/1 var(--font-display); color: var(--gold); }
+.land-phone:hover{color: var(--gold-dark);}
 .land-phone i { color: var(--gold-dark); margin-right: 6px; }
 
 /* ---------- 6. HERO ---------- */
@@ -139,7 +141,7 @@ html { scroll-behavior: smooth; }
 }
 .hero-eyebrow {
   font: 600 11.5px/1 var(--font-display); letter-spacing: .22em; text-transform: uppercase;
-  color: var(--gold-dark); margin-bottom: 22px;
+  color: var(--gold-dark); margin-bottom: 22px; line-height: normal;
 }
 .hero__title { font-size: clamp(2.1rem, 4.8vw, 3.5rem); font-weight: 800; line-height: 1.06; margin: 6px 0 22px; }
 .hero__title-accent { color: var(--navy); }
@@ -155,7 +157,7 @@ html { scroll-behavior: smooth; }
 .hero__lead strong { color: var(--navy); font-weight: 600; }
 
 /* ---------- 7. РАЗВИЛКА ---------- */
-.fork { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 900px; }
+.fork { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 900px; margin-top: 2rem;}
 @media (max-width: 767px) { .fork { grid-template-columns: 1fr; } }
 
 .fork-card {
@@ -193,7 +195,7 @@ html { scroll-behavior: smooth; }
 .trust-logo { display: inline-flex; align-items: center; color: var(--navy); }
 .trust-logo svg { height: 3.5rem; width: auto; }
 .trust-logo--text { font: 700 13px/1 var(--font-display); letter-spacing: .04em; color: var(--navy); }
-.trust-logo--text i { color: var(--gold-dark); margin-right: 8px; font-size: 2.37rem; }
+.trust-logo--text i { color: var(--gold-dark); margin-right: 8px; font-size: 3.5rem; }
 
 /* ---------- 9. ТАБЫ + ПАНЕЛИ ---------- */
 .tabs {
@@ -201,12 +203,13 @@ html { scroll-behavior: smooth; }
   background: var(--bg-soft); padding: 6px; border-radius: 10px;
   max-width: 720px; margin: 0 auto 40px;
 }
-@media (max-width: 575px) { .tabs { grid-template-columns: 1fr; } }
+.trust-logo--text i{
+@media (max-width: 575px) { .tabs { grid-template-columns: 1fr; } }}
 
 .tab {
   background: transparent; border: 0; cursor: pointer;
   font: 700 13.5px/1.2 var(--font-display); color: var(--muted);
-  padding: 14px 16px; border-radius: 6px; transition: all .25s;
+  padding: 22px 24px; border-radius: 6px; transition: all .25s;
   display: flex; align-items: center; justify-content: center; gap: 10px;
 }
 .tab i { font-size: 16px; }
@@ -414,7 +417,7 @@ html { scroll-behavior: smooth; }
 .lead-form.is-sent button[type="submit"] { display: none; }
 
 /* ---------- 17. ФУТЕР ---------- */
-.land-footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: clamp(40px, 5vw, 56px) 0 22px; }
+.land-footer { background: var(--navy); color: rgba(255,255,255,.7); padding: clamp(40px, 5vw, 56px) 0 22px; }
 .land-footer__brand { font: 800 1.8rem/1 var(--font-display); color: #fff; margin: 0 0 6px; letter-spacing: .02em; }
 .land-footer__sub { font-size: .9rem; color: rgba(255,255,255,.6); margin: 0; }
 .land-footer__addr { font-size: .88rem; margin: 0; color: rgba(255,255,255,.65); }
@@ -430,7 +433,7 @@ html { scroll-behavior: smooth; }
 /* ---------- 18. STICKY-CTA ---------- */
 .cta-bar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 1040;
-  background: rgba(0,35,61,.96); backdrop-filter: blur(6px);
+  background: var(--navy-deep); backdrop-filter: blur(6px);
   border-top: 1px solid rgba(212,160,23,.4); padding: 12px 0;
   transform: translateY(110%); transition: transform .45s cubic-bezier(.2,.7,.3,1);
 }
@@ -524,11 +527,11 @@ html { scroll-behavior: smooth; }
 .btn-star:hover i.bi-arrow-right, .btn-star:hover i.bi-chevron-down { transform: translateX(4px); }
 .btn-brand { background: var(--brand); color: #fff; }
 .btn-brand:hover { background: var(--brand-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,174,239,.35); }
-.btn-navy { background: var(--navy); color: #fff; }
-.btn-navy:hover { background: var(--navy-deep); color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-navy { background: var(--brand); color: #fff; }
+.btn-navy:hover { background: var(--brand-dark); color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .btn-gold { background: var(--gold); color: #fff; }
 .btn-gold:hover { background: var(--gold-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(212,160,23,.35); }
 .btn-ghost { background: #fff; border-color: var(--line); color: var(--ink); }
 .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
 .btn-star--sm { padding: 10px 18px; font-size: 12.5px; }
-.btn-star:disabled { opacity: .55; cursor: not-allowed; transform: none; box-shadow: none; }
+.btn-star:disabled { opacity: .55; cursor: not-allowed; transform: none; box-shadow: none;}
